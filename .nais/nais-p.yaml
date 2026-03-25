@@ -2,10 +2,10 @@ apiVersion: nais.io/v1alpha1
 kind: Application
 
 metadata:
-  name: oebs-template-api
+  name: oebs-konteringsinfo-api
   namespace: team-oebs
   labels:
-    app: oebs-template-api
+    app: oebs-konteringsinfo-api
     team: team-oebs
 
 spec:
@@ -44,5 +44,5 @@ spec:
     path: /actuator/prometheus
 
   ingresses:
-    - "https://oebs-template.nav.no"
-    - "https://oebs-template.intern.nav.no"
+    - "https://oebs-konteringsinfo.nav.no"
+    - "https://oebs-konteringsinfo.intern.nav.no"
