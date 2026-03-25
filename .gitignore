@@ -7,17 +7,26 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
-# https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
 
-# Eclipse m2e generated files
-# Eclipse Core
+# Eclipse
 .project
-# JDT-specific (Eclipse Java Development Tools)
 .classpath
 
+# IntelliJ
 .idea/
-jarRepositories.xml
+*.iml
+*.iws
+*.ipr
 
-# application-local.yml
+# Local config — never commit
 application-local.yaml
+.env
+*.env
+
+# Copilot / AI instructions — local only
+.github/copilot-instructions.md
+
+# OS
+.DS_Store
+Thumbs.db
