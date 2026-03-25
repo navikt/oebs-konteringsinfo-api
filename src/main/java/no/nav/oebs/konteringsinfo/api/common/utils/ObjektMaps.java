@@ -1,14 +1,13 @@
-package no.nav.oebs.api.common.utils;
+package no.nav.oebs.konteringsinfo.api.common.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import no.nav.oebs.api.db.repository.PlsqlMessageCodes;
-import no.nav.oebs.api.db.repository.PlsqlProcedureResult;
-import no.nav.oebs.api.exception.JsonMappingException;
-import no.nav.oebs.api.exception.TechnicalPlsqlException;
-import no.nav.oebs.api.exception.UgyldigInputException;
+import no.nav.oebs.konteringsinfo.api.db.repository.PlsqlMessageCodes;
+import no.nav.oebs.konteringsinfo.api.db.repository.PlsqlProcedureResult;
+import no.nav.oebs.konteringsinfo.api.exception.JsonMappingException;
+import no.nav.oebs.konteringsinfo.api.exception.TechnicalPlsqlException;
+import no.nav.oebs.konteringsinfo.api.exception.UgyldigInputException;
 
 /**
  * Superklasse med felles funksjonalitet for implementasjon av tjenestespesifikke Service-klasser.
