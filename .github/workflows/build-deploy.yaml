@@ -2,7 +2,6 @@ name: Build and push and deploy
 on:
   push:
     branches:
-      - 'dev/**'
       - 'main'
 jobs:
   build_and_push:
@@ -38,26 +37,27 @@ jobs:
           identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }} # required, but is defined as an organization secret
           salsa: true
 
-      - name: Deploy to NAIS (T1)
-        if: startsWith(github.ref, 'refs/heads/dev/t1')  || github.ref == 'refs/heads/main'
-        uses: nais/deploy/actions/deploy@v2
-        env:
-          CLUSTER: dev-gcp
-          RESOURCE: .nais/nais-t1.yaml
-          IMAGE: ${{ steps.docker-push.outputs.image }}
-
-      - name: Deploy to NAIS (Q1)
-        if: startsWith(github.ref, 'refs/heads/dev/q1')  || github.ref == 'refs/heads/main'
-        uses: nais/deploy/actions/deploy@v2
-        env:
-          CLUSTER: dev-gcp
-          RESOURCE: .nais/nais-q1.yaml
-          IMAGE: ${{ steps.docker-push.outputs.image }}
-
-      - name: Deploy to NAIS produksjon
-        if: startsWith(github.ref, 'refs/heads/main')
-        uses: nais/deploy/actions/deploy@v2
-        env:
-          CLUSTER: prod-gcp
-          RESOURCE: .nais/nais-p.yaml
-          IMAGE: ${{ steps.docker-push.outputs.image }}
+#      - name: Deploy to NAIS (T1)
+#        if: github.ref == 'refs/heads/main'
+#        uses: nais/deploy/actions/deploy@v2
+#        env:
+#          SPRING_PROFILES_ACTIVE: t1
+#          CLUSTER: dev-gcp
+#          RESOURCE: .nais/nais-t1.yaml
+#          IMAGE: ${{ steps.docker-push.outputs.image }}
+#
+#      - name: Deploy to NAIS (Q1)
+#        if: github.ref == 'refs/heads/main'
+#        uses: nais/deploy/actions/deploy@v2
+#        env:
+#          CLUSTER: dev-gcp
+#          RESOURCE: .nais/nais-q1.yaml
+#          IMAGE: ${{ steps.docker-push.outputs.image }}
+#
+#      - name: Deploy to NAIS produksjon
+#        if: startsWith(github.ref, 'refs/heads/main')
+#        uses: nais/deploy/actions/deploy@v2
+#        env:
+#          CLUSTER: prod-gcp
+#          RESOURCE: .nais/nais-p.yaml
+#          IMAGE: ${{ steps.docker-push.outputs.image }}

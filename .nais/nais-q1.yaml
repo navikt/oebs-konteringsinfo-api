@@ -1,10 +1,10 @@
 apiVersion: nais.io/v1alpha1
 kind: Application
 metadata:
-  name: oebs-template-api-q1
+  name: oebs-konteringsinfo-api-q1
   namespace: team-oebs
   labels:
-    app: oebs-template-api-q1
+    app: oebs-konteringsinfo-api-q1
     team: team-oebs
 spec:
   image: {{ image }}
@@ -31,7 +31,7 @@ spec:
   accessPolicy:
     outbound:
       external:
-        - host: nav-qa.template.no
+        - host: nav-qa.konteringsinfo.no
         - host: a34duvw10783.devillo.no
         - ipv4: 10.53.136.176
           ports:
@@ -42,5 +42,5 @@ spec:
     path: /actuator/prometheus
 
   ingresses:
-    - "https://oebs-template-api-q1.intern.dev.nav.no"
-    - "https://oebs-template-api-q1.ekstern.dev.nav.no"
+    - "https://oebs-konteringsinfo-api-q1.intern.dev.nav.no"
+    - "https://oebs-konteringsinfo-api-q1.ekstern.dev.nav.no"

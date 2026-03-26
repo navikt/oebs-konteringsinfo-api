@@ -1,0 +1,27 @@
+no.nav.security.jwt:
+  issuer:
+    azure:
+      accepted_audience: "dummy"
+      discovery-url: "http://localhost"
+
+MM_USER: local
+MM_PASSWORD: local
+MM_GRANT_TYPE: password
+MM_URL_TOKEN: token
+OEBS_ENV: "LOCAL"
+APP_UPDATE: "2026-03-24"
+APP_VERSION: "local-dev"
+
+spring:
+  datasource:
+    username: "local"
+    password: "local"
+    url: "jdbc:oracle:thin:@localhost:1521:local"
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration
+  application:
+    name: oebs-konteringsinfo-api
