@@ -24,4 +24,4 @@ spring:
       - org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration
       - org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration
   application:
-    name: oebs-konteringsinfo-api
+    name: okonomimodell-api
