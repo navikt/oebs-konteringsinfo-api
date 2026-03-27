@@ -15,12 +15,23 @@ spec:
     min: 3
     max: 3
 
+  liveness:
+    path: /actuator/health/liveness
+    initialDelay: 30
+    periodSeconds: 5
+    failureThreshold: 3
+
+  readiness:
+    path: /actuator/health/readiness
+    initialDelay: 30
+    periodSeconds: 5
+    failureThreshold: 3
+
   resources:
     requests:
       cpu: 400m
       memory: 1024Mi
     limits:
-      cpu: 4000m
       memory: 2048Mi
 
   azure:
@@ -28,17 +39,12 @@ spec:
       enabled: true
       allowAllUsers: true
       tenant: nav.no
-  envFrom:
-    - secret: template
 
   accessPolicy:
+    inbound:
+      rules: []
     outbound:
-      external:
-        - host: template.
-        - host: template.devillo.no
-        - ipv4: 111.11.11.111
-          ports:
-            - port: 1111
+      rules: []
   prometheus:
     enabled: true
     path: /actuator/prometheus
