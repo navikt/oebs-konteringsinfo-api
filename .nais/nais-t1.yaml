@@ -54,5 +54,5 @@ spec:
     path: /actuator/prometheus
 
   ingresses:
-     - "https://okonomimodell-t1.intern.dev.nav.no"
-     - "https://okonomimodell-t1.ekstern.dev.nav.no"
+     - "https://okonomimodell-api-t1.intern.dev.nav.no"
+     - "https://okonomimodell-api-t1.ekstern.dev.nav.no"
